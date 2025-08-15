@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+      .box {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        height: 100px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>We are learning Python and Django</h1>
+    <h2>Name: {{name}}</h2>
+    {% if age < 20 %}
+    <h3>Age: Not displayed</h3>
+    {% else %}
+    <h3>Age : you are {{age}} years old</h3>
+    {% endif %}
+
+    <h3>Course: {{course}}</h3> -->
+    <h1>Todos</h1>
+
+    <div class="container">
+      <!-- todo text  -->
+
+      <!-- todos  -->
+      {% for todo in todos %}
+      <div class="box">
+        <h3>task: {{todo.title}}</h3>
+        <p>Description:{{todo.description}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

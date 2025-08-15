@@ -42,3 +42,6 @@ def index(request):
         "todos": todos
     }
     return render(request,'task/index.html',context=context)
+
+def detail_page(request,task_id):
+    return HttpResponse(task_id)

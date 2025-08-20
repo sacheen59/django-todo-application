@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Task
 
@@ -11,4 +11,10 @@ def index(request):
         "todos": todos
     }
     return render(request,'task/index.html',context=context)
+
+def delete(request,id):
+    todo = Task.objects.get(id = id)
+    todo.delete()
+    # return redirect("/todo/index/")
+    return redirect("index-page")
 

@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('index/',views.index),
+    path('index/',views.index,name="index-page"),
+    path('delete/<int:id>/',views.delete,name="delete")
 ]
